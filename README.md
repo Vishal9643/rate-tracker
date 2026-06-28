@@ -16,7 +16,7 @@ A production-shaped interest-rate data pipeline — ingest, store, expose, and v
 
 ## AI Tools Usage
 
-This project was built with the assistance of AI coding tools.
+This project was built with the assistance of AI coding tools (Antigravity).
 - **Code Generation & Architecture**: AI was used to bootstrap the Django project structure, write the data cleaning algorithms, and scaffold the Next.js frontend components.
 - **Debugging & Refactoring**: AI assisted in debugging SQLite-specific constraints (e.g., bypassing `DISTINCT ON`) and refining the Celery beat schedule.
 - **Documentation**: AI helped format markdown documents (README, DECISIONS, schema) and generate test cases.
