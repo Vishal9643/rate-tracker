@@ -11,6 +11,5 @@ postgres_data/
 .coverage
 htmlcov/
 *.log
-rates_seed.parquet
 __pycache__/
 *.pyc
