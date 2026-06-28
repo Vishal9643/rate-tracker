@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+venv/
+.venv/
+node_modules/
+.next/
+*.sqlite3
+postgres_data/
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+rates_seed.parquet
+__pycache__/
+*.pyc

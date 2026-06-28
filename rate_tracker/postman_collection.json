@@ -1,0 +1,158 @@
+{
+  "info": {
+    "name": "Rate Tracker API",
+    "description": "API collection for Rate Tracker",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/health/",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "health",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Latest Rates",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/rates/latest/?type=30yr_fixed_mortgage",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "rates",
+            "latest",
+            ""
+          ],
+          "query": [
+            {
+              "key": "type",
+              "value": "30yr_fixed_mortgage",
+              "description": "Rate type (e.g., 15yr_fixed_mortgage, 30yr_fixed_mortgage, 5yr_arm_mortgage, savings_1yr_fixed, savings_easy_access)"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Rate History",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/rates/history/?provider=Chase&type=30yr_fixed_mortgage&from=2020-01-01&to=2023-12-31",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "rates",
+            "history",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "Chase",
+              "description": "Provider name"
+            },
+            {
+              "key": "type",
+              "value": "30yr_fixed_mortgage",
+              "description": "Rate type"
+            },
+            {
+              "key": "from",
+              "value": "2020-01-01",
+              "description": "Optional start date (YYYY-MM-DD)"
+            },
+            {
+              "key": "to",
+              "value": "2023-12-31",
+              "description": "Optional end date (YYYY-MM-DD)"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ingest Rate",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearer_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"provider\": \"Chase\",\n    \"rate_type\": \"30yr_fixed_mortgage\",\n    \"rate_value\": \"6.5\",\n    \"effective_date\": \"2023-10-25\",\n    \"source_url\": \"https://chase.com/mortgage/rates\",\n    \"currency\": \"USD\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/v1/rates/ingest/",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "rates",
+            "ingest",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000",
+      "type": "string"
+    },
+    {
+      "key": "bearer_token",
+      "value": "your_api_token_here",
+      "type": "string"
+    }
+  ]
+}

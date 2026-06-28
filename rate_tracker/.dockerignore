@@ -1,0 +1,16 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+*.log
+.git
+.mypy_cache
+.pytest_cache
+db.sqlite3
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+rates_seed.parquet

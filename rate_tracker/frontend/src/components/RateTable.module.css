@@ -1,0 +1,157 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.select {
+  padding: 0.5rem 0.85rem;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.select:focus {
+  border-color: var(--accent);
+}
+
+.cacheBadge {
+  padding: 0.25rem 0.6rem;
+  background: var(--accent-subtle);
+  color: var(--accent);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.countBadge {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 480px;
+}
+
+.th {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--surface-elevated);
+  border-bottom: 1px solid var(--border);
+  user-select: none;
+  white-space: nowrap;
+}
+
+.th:first-child { border-radius: 11px 0 0 0; }
+.th:last-child { border-radius: 0 11px 0 0; }
+
+.sortable {
+  cursor: pointer;
+}
+
+.sortable:hover {
+  color: var(--text-primary);
+  background: var(--surface-hover);
+}
+
+.sortIcon {
+  opacity: 0.3;
+  margin-left: 0.3rem;
+}
+
+.sortIconActive {
+  color: var(--accent);
+  margin-left: 0.3rem;
+}
+
+.tr {
+  transition: background 0.1s;
+}
+
+.tr:hover {
+  background: var(--surface-hover);
+}
+
+.tr:not(:last-child) td {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.td {
+  padding: 0.85rem 1rem;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+
+.providerName {
+  font-weight: 500;
+}
+
+.rateTypeBadge {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.rateValue {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+.dateCell {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.emptyCell {
+  padding: 3rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.refreshNote {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: right;
+  margin: 0;
+}
